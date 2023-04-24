@@ -61,9 +61,9 @@ function isTwo(number) {
     return number === 2;
 }
 console.log(isTwo(1));
-
-var random = Math.floor((Math.random() * 3) + 1);
 console.log(isTwo(random))
+
+
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -76,8 +76,9 @@ console.log(isTwo(random))
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 function calculateTip(tipPercentage, totalBill) {
-    return tipPercentage * totalBill;
+    return (tipPercentage/100) * totalBill;
 }
+calculateTip(0.20, 20) // returns 4
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -102,6 +103,10 @@ alert ("You can tip $" + tipAmount.toFixed(2));
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-function applyDiscount(originalPrice, discountPercentage) {
-    return price * (1 - discountPercentage)
+function applyDiscount(originalPrice, discountPercent) {
+    var discountAmount = originalPrice + discountPercent
+    return originalPrice - discountAmount;
 }
+var originalPrice = 100;
+var discountPercent = .2; // 20%
+applyDiscount(originalPrice, discountPercent) // 80
